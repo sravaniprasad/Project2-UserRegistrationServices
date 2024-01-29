@@ -1,0 +1,14 @@
+.container{
+    color: rgb(0, 35, 91);
+    text-align: center;
+    margin-top: 100px;
+  
+}
+
+.alert {
+    margin-top: 10px;
+  }
+
+.spacer{
+    flex: 1 1 auto;
+}

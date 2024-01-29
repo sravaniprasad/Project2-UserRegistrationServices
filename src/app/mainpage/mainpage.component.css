@@ -1,0 +1,33 @@
+.container{
+    color: pink;
+    text-align: center;
+    margin-top: 100px;
+  
+}
+.container .h3{
+    color: blueviolet;
+    text-align: center;
+    margin-top: 10px;
+
+}
+.container .btn{
+    background-color: bisque;
+    border-radius: 5px;
+    padding: 5px;
+    color: black;
+    border-color: navajowhite;
+    text-align: center;
+    margin-top: 10px;
+
+}
+.spacer{
+    flex: 1 1 auto;
+}
+.image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  height: 80vh;
+  
+   
+}

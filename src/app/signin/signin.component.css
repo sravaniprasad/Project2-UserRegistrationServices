@@ -1,0 +1,85 @@
+.container h2{
+    text-align: center;
+    color: rgb(255, 0, 0);
+}
+.container .scroll{
+    text-align: center;
+    color: green;
+}
+
+.eye{
+    position: absolute;
+   right: 25px;
+   bottom: 215px;
+  
+    cursor: pointer;
+}
+
+.popup{
+    width: 400px;
+    text-align: center;
+    background: #d2cdcd;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 0 30px 30px;
+    color: #333;
+  
+}
+.popup img{
+    height:80px;
+   
+    width: 80px;
+    margin-top: -40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.popup h2{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+.popup button{
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    border: 0;
+    background: #6fd649;
+    color: #fff;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.form-box{
+    width: 400px;
+    height: 450px;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 70%;
+    margin-bottom: 100px;
+    font-style: italic;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 10px;
+    border: 2px solid solid rgb(250, 247, 247);;
+   border-style: hidden;
+    z-index: 1;
+}
+.disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.form-control.ng-touched.ng-invalid{
+    border: 1px solid red;
+}
+.form-control.ng-touched.ng-valid{
+    border: 1px solid green;
+}
+.spacer{
+    flex: 1 1 auto;
+}

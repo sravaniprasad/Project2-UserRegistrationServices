@@ -1,0 +1,38 @@
+<mat-toolbar color="primary">
+   <span>Chengannagari's blog</span>
+   <span class="spacer"></span>
+  <button mat-button routerLink="/">Home</button>
+   <button mat-button>About</button>
+   <button mat-button routerLink="/signup">Signup</button>   
+ </mat-toolbar>
+
+<div class="container">
+    
+    <form>
+    <form [formGroup]="login" class="form-box" (ngSubmit)="logindata()">
+         <h2>Login</h2>
+         <div class="form-group">
+            <label>Username</label><small class="text-danger">*</small>
+            <input type="text" formControlName="userName" class="form-control mb-3 mt-3" placeholder="Enter username" />
+             <small *ngIf="login.get('userName')?.invalid && login.get('userName')?.touched" class="text-danger"> username required</small> 
+         </div>
+
+         <div class="form-group">
+            <label>Password</label><small class="text-danger">*</small>
+            <input [type]="showpassword ?'text':'password'" formControlName="password" class="form-control mb-3 mt-3" placeholder="Password" />
+            <i (click)="Show()" class="fa-solid fa-eye eye" *ngIf="!showpassword"></i>
+            <i (click)="Show()" class="fa-sharp fa-solid fa-eye-slash eye" *ngIf="showpassword"></i>
+            <small *ngIf="login.get('password')?.invalid && login.get('password')?.touched" class="text-danger"> password required</small> 
+           <br/> <small *ngIf="login.get('password')?.invalid && login.get('password')?.touched" class="text-danger"> Password size must be in 10 </small> 
+         </div>
+
+          New User? <a  routerLink="/signup">SignUp</a>
+         <br/>
+         <button type="submit" [disabled]="login.invalid" (click)="openpopup()" class="btn btn-secondary">Login</button>
+
+        
+    </form> 
+    </form>
+</div>
+
+

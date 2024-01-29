@@ -1,0 +1,74 @@
+<mat-toolbar color="primary">
+    <span>Welcome to Chengannagari's blog</span>
+    <span class="spacer"></span>
+   <button mat-button routerLink="/home">Home</button>
+   <button mat-button routerLink="/dashboard">Status</button> 
+    <button mat-button routerLink="/logout">logOut</button>  
+  </mat-toolbar>
+  <!-- dashboard.component.html -->
+
+<!-- <div>
+  <h2>User Names</h2>
+  <select>
+    <option *ngFor="let name of names" [value]="name">{{ name.firstName }}</option>
+  </select>
+</div> -->
+<div class="container">
+  <form [formGroup]="dashboard" class="form-box1" >
+
+    <h2>Health check</h2>
+
+    <!-- first name dropdown -->
+    <div class="form-group">
+      <label><b>Name</b></label><small class="text-danger">*</small>
+      <select formControlName="firstName" class="form-control mb-3 mt-3">
+        <option value="">Select name</option>
+        <option *ngFor="let name of names" [value]="name.firstName">{{ name.firstName }}</option>
+      </select>
+      <small *ngIf="dashboard.get('firstName')?.invalid && dashboard.get('firstName')?.touched" class="text-danger">Enter name</small>
+    </div>
+
+    <div class="form-group">
+      <label><b>Bugs</b></label><small class="text-danger">*</small>
+      <select formControlName="bugs" class="form-control mb-3 mt-3">
+        <option value="">Bugs??</option>
+        <option value="none(0)">None(0 Bugs)</option>
+        <option value=">gt5"> Morethan 5</option>
+        <option value="lt5"> Lessthan 5</option>
+      </select>
+     <small *ngIf="dashboard.get('bugs')?.invalid && dashboard.get('bugs')?.touched" class="text-danger">Any bugs involved in service? mention in number....</small>
+    </div>
+
+    <div class="form-group">
+      <label><b>Deployment Timeline</b></label><small class="text-danger">*</small>
+      <select formControlName="deploymentTimeline" class="form-control mb-3 mt-3">
+        <option value="">Select your deploymentTimeline</option>
+        <option value="1Year">1Year</option>
+        <option value="2Years">2Years</option>
+        <option value="pending">Pending</option>
+        <option value="completed">completed</option>
+      </select>
+      <small *ngIf="dashboard.get('deploymentTimeline')?.invalid && dashboard.get('deploymentTimeline')?.touched" class="text-danger">Give time line to calculate status of your service</small>
+    </div>
+
+    <div class="form-group">
+      <label><b>Service rate</b></label><small class="text-danger">*</small>
+      <input type="text" formControlName="serviceRate" class="form-control mb-3 mt-3" placeholder="rate to your service on assumption" />
+      <small *ngIf="dashboard.get('serviceRate')?.invalid && dashboard.get('serviceRate')?.touched" class="text-danger">Give serviceRate on assumption</small>
+    </div>
+
+    <div class="form-group">
+      <label><b>Status</b></label><small class="text-danger">*</small>
+      <select formControlName="status" class="form-control mb-3 mt-3">
+        <option value="">service status in the period of deployment?</option>
+        <option value="Build-Success">Service-up</option>
+        <option value="Moderate">Optimal range</option>
+        <option value="Build-Fail">Service-down</option>
+      </select>
+      <small *ngIf="dashboard.get('status')?.invalid && dashboard.get('status')?.touched" class="text-danger">Mention the status of your deployment?</small>
+    </div>
+
+    <button  type="submit"(click)="check()" [disabled]="dashboard.invalid" class="btn btn-secondary">Check Status</button>
+  </form>
+ 
+</div>

@@ -1,0 +1,97 @@
+<mat-toolbar color="primary">
+    <span>Welcome to Chengannagari's blog</span>
+    <span class="spacer"></span>
+   <button mat-button routerLink="/">Home</button>
+   <button mat-button routerLink="/dashboard">Status</button> 
+    <button mat-button routerLink="/logout">logOut</button>  
+  </mat-toolbar>
+  
+  <form [formGroup]="searchForm" class="form-box" (ngSubmit)="Search()">
+    <nav class="nav-bar">
+      <input class="nav-search" type="text" formControlName="firstName" placeholder="Search here"/>
+      <button  type="submit">Search</button>
+      <div class="container" *ngIf="flag">
+    
+        <input (change)="chooseFile($event)" type="file" />
+        
+        <button (click)="UploadFile()" class ="btn" mat-raised-button color="primary">Upload </button>
+         
+        </div>
+        <div class="container" *ngIf="!flag">
+        
+            <h1>Uploading..............</h1>
+        </div>
+    </nav>
+    
+
+  
+  </form> 
+
+  
+  <!-- <div>
+    <input type="text" placeholder="Search Food from Kappodu @ Food Corner" 
+    name ="firstName" (change)="Search()">
+    <button (click)="Search()">Search</button>
+</div> -->
+  
+<div class="data">
+
+  <h1>Chengannagari's data</h1>
+  <div class="data1">  
+  </div>
+  <table class="table table-bordered" #table >
+<thead>
+  <tr>
+    
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>User Name</th>
+    <th>gender</th>
+    <th>Country</th>
+    <th>State</th>
+    <th>District</th>
+    <th>Address</th>
+    <th>phoneNumber</th>
+    <th>E-mail</th>
+    <th>password</th>
+    <th>image</th>
+  </tr>
+</thead>
+<tbody>
+  <!-- <tr *ngFor="let user of users"> -->
+    <tr *ngFor="let user of filteredUsers.length ? filteredUsers : users | paginate: {itemsPerPage:5,currentPage:p};">
+    <td>{{user.firstName}}</td>
+    <td>{{user.lastName}}</td>
+    <td>{{user.userName}}</td>
+    <td>{{user.gender}}</td>
+    <td>{{user.country}}</td>
+    <td>{{user.state}}</td>
+    <td>{{user.district}}</td>
+    <td>{{user.address}}</td>
+    <td>{{user.phoneNumber}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.password}}</td>
+    <td>{{user.image}}></td>
+     
+        </tr>
+     
+</tbody>
+  </table>
+</div>
+
+
+
+
+<button class ="btns" mat-button color="secondary" (click)="exportDataToExcel()">Export</button> <br/>
+   
+  
+  
+<pagination-controls (pageChange)="p=$event"></pagination-controls>
+
+<!-- <ul>
+    <li *ngFor="let user of users">
+{{user.userName}}  {{user.email}}  {{user.phoneNumber}}
+    </li>
+  </ul> -->
+
+

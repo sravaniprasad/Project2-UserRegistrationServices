@@ -1,0 +1,47 @@
+.container h2{
+    text-align: center;
+    color: red;
+}
+.reset{
+    display: flex;
+    justify-content: space-between;
+}
+.spacer{
+    flex: 1 1 auto;
+}
+.alert {
+    margin-top: 10px;
+  }
+.dropdown,.names,.gender,.credentials{
+    display: flex;
+    gap: 5px;
+}
+.buttons,.pre{
+    display: flex;
+   justify-content: center;
+   gap: 20px;
+}
+.form-box1{
+    width: 500px;
+    height: 1px;
+    padding: 25px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 20%;
+    font-style: italic;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 10px;
+    border: 2px solid rgb(255, 0, 0);
+   border-style: hidden;
+    z-index: 1;
+    z-index: 1;
+}
+
+.form-control.ng-touched.ng-invalid{
+    border: 1px solid red;
+}
+.form-control.ng-touched.ng-valid{
+    border: 1px solid green;
+}
